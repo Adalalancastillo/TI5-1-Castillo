@@ -29,15 +29,7 @@ $router->post('/saludo', function(){
 $router->put('/saludo', function(){
     return 'Modifique el hola';
 });
-$router->get('/calcular/{edad}',function($edad) {
-    if($edad > 0 && $edad < 18) {
-        return 'eres menor de edad';
-    } elseif ($edad >= 18 && $edad<=100){
-        return 'ERES MAYOR DE EDAD';
-    } else {
-        return 'Edad erronea';
-    }
-});
+$router->get('/calcular/{edad}','CalcularEdadController@calcularEdad');
 
 
 $router->delete('/saludo', function(){
